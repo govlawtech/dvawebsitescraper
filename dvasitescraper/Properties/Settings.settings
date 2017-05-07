@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="dvasitescraper.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="factListByKeyWordPageUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.dva.gov.au/about-dva/factsheets/dva-factsheets-keyword</Value>
+    </Setting>
+    <Setting Name="baseUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.dva.gov.au</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
