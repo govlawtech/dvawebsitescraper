@@ -43,6 +43,7 @@ namespace DvaSiteScraper
             HttpWebRequest req = CreateWebRequest(uri);
             var resp = await req.GetResponseAsync();
             var htmlDoc = new HtmlDocument();
+            // headers of dva site say chartset = utf-8
             using (var respStram = resp.GetResponseStream())
             {
                 htmlDoc.Load(respStram, Encoding.UTF8);

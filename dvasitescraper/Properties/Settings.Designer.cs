@@ -46,5 +46,17 @@ namespace DvaSiteScraper.Properties {
                 this["baseUrl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("allFactSheetData.json")]
+        public string outputPath {
+            get {
+                return ((string)(this["outputPath"]));
+            }
+            set {
+                this["outputPath"] = value;
+            }
+        }
     }
 }
