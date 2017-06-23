@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="testJson" xml:space="preserve">
+    <value>{
+    "title": "Factsheet IS75 - Renting and Rent Assistance – Social Security Age Pensioners",
+    "keywordsFromIndexPage": [
+      "Accommodation",
+      "Address",
+      "Age pension",
+      "Allowances",
+      "Benefits",
+      "Eligibility",
+      "Rent",
+      "Residential Circumstances"
+    ],
+    "factSheetHtml": "&lt;div class=\"region region-content\"&gt;\n    &lt;div id=\"block-system-main\" class=\"block block-system first odd\"&gt;\n\n    \n  &lt;div class=\"content\"&gt;\n    &lt;article class=\"node-1857 node node-factsheet view-mode-full clearfix\"&gt;\r\n\r\n  \r\n  &lt;div class=\"field field-name-body field-type-text-with-summary field-label-hidden\"&gt;&lt;div class=\"field-items\"&gt;&lt;div class=\"field-item even\"&gt;&lt;h2&gt;Purpose&lt;/h2&gt;\n&lt;p&gt;This Factsheet explains rent assistance in relation to age pension. Service pensioners should refer to Factsheet &lt;a href=\"/factsheet-is74-renting-and-rent-assistance\"&gt;IS74 Renting and Rent Assistance&lt;/a&gt; for information about rent assistance.&lt;/p&gt;\n&lt;h2&gt;What is rent assistance?&lt;/h2&gt;\n&lt;p&gt;Rent assistance is a non taxable allowance to help meet the cost of private rented accommodation.&lt;/p&gt;\n&lt;h2&gt;What is considered to be rent?&lt;/h2&gt;\n&lt;p&gt;Rent is an amount paid by a person on a regular basis for occupying a residence, and includes:&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;rent for private rental accommodation&lt;/li&gt;\n&lt;li&gt;fees for the hire, rental or leasing of a caravan site or to moor a boat&lt;/li&gt;\n&lt;li&gt;lodging&lt;/li&gt;\n&lt;li&gt;board and lodging (if you cannot identify the amount paid for lodging, 2/3rds of the total amount you pay is taken to be rent)&lt;/li&gt;\n&lt;li&gt;fees paid to a non-government-funded residential care facility&lt;/li&gt;\n&lt;li&gt;fees for nursing-home type accommodation in a facility that is not subsidised by Government&lt;/li&gt;\n&lt;li&gt;fees paid for services in a self-care retirement village&lt;/li&gt;\n&lt;li&gt;site fees for relocatable homes.&lt;/li&gt;\n&lt;/ul&gt;&lt;p&gt;You may also be eligible for rent assistance if you have sold your principal residence and are paying rent while you wait to buy or build another.&lt;/p&gt;\n&lt;h2&gt;Who is eligible for rent assistance?&lt;/h2&gt;\n&lt;p&gt;You are eligible to receive rent assistance if you:&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;are eligible for age pension;&lt;/li&gt;\n&lt;li&gt;pay rent other than Government (public housing) rent;&lt;/li&gt;\n&lt;li&gt;pay a minimum amount of rent known as the rent threshold; and&lt;/li&gt;\n&lt;li&gt;live in Australia.&lt;/li&gt;\n&lt;/ul&gt;&lt;h2&gt;Who is not eligible for rent assistance?&lt;/h2&gt;\n&lt;p&gt;You are not eligible for rent assistance if you:&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;pay rent to a government housing authority;&lt;/li&gt;\n&lt;li&gt;own or are paying off the home you live in, unless you are an eligible homeowner;&lt;/li&gt;\n&lt;li&gt;have a long term accommodation arrangement such as life interest from a deceased estate (refer to Factsheet &lt;a href=\"/factsheet-is73-granny-flats-retirement-villages-and-sale-leaseback-agreements\"&gt;IS73 Granny Flats, Retirement Villages and Sale Leaseback Agreements&lt;/a&gt;);&lt;/li&gt;\n&lt;li&gt;are overseas permanently, or temporarily for long periods of time (refer to Factsheet &lt;a href=\"/factsheet-is77-travelling-or-living-overseas\"&gt;IS77 Travelling or Living Overseas&lt;/a&gt;);&lt;/li&gt;\n&lt;li&gt;are in a residential aged care facility that receives government funding (refer to Factsheet &lt;a href=\"/factsheet-is81-aged-care-and-your-income-support-pension\"&gt;IS81 Aged Care and Your Income Support Pension&lt;/a&gt;);&lt;/li&gt;\n&lt;li&gt;live in a retirement village and have paid an entry contribution of more than $200,000 (totalling all contracts) whether single or a member of a couple;&lt;/li&gt;\n&lt;li&gt;receive incentive allowance from Centrelink; or&lt;/li&gt;\n&lt;li&gt;pay rent which is less than the rent threshold.&lt;/li&gt;\n&lt;/ul&gt;&lt;p&gt;If you (or your partner) has a dependent child under 16, you will not receive rent assistance from DVA. Any rent assistance entitlement will be added to your Family Tax Benefit payment payable through the Family Assistance Office (refer to Factsheet &lt;a href=\"/factsheet-is48-dependent-children-and-your-income-support-payments\"&gt;IS48 Dependent Children and your Income Support Payments&lt;/a&gt;).&lt;/p&gt;\n&lt;h2&gt;Government rent&lt;/h2&gt;\n&lt;p&gt;‘Government rent’ means rent payable to a housing authority in a State or Territory of Australia. If you pay government rent you are not eligible for rent assistance because your rent is already subsidised by the Australian and State or Territory Government.&lt;/p&gt;\n&lt;h2&gt;How is rent assistance calculated?&lt;/h2&gt;\n&lt;p&gt;You must pay a minimum amount of rent before you can be paid rent assistance. This minimum amount is called the rent threshold. For every $1 of rent that you pay in excess of the rent threshold you will receive $0.75 of rent assistance, up to a maximum amount. The rent thresholds depend on whether you are single or a member of a couple.&lt;/p&gt;\n&lt;p&gt;The rent thresholds shown below are fortnightly figures.&lt;/p&gt;\n&lt;p&gt;Singles rate - $117.80&lt;/p&gt;\n&lt;p&gt;Couples rate - $191.00&lt;/p&gt;\n&lt;p&gt;Rent thresholds are adjusted twice-yearly, in March and September, in line with movements in the cost of living.&lt;/p&gt;\n&lt;p&gt;&lt;u&gt;Example&lt;/u&gt;: A single pensioner is paying $165.80 per fortnight in rent. The rent threshold is $117.80.  For every $1.00 of rent paid that is over the threshold, the single pensioner will receive $0.75.&lt;/p&gt;\n&lt;p&gt;This equals:&lt;/p&gt;\n&lt;p&gt;        $165.80 (rent) - $117.80 (threshold) = $48.00&lt;/p&gt;\n&lt;p&gt;                             $48.00  x   $0.75 = $36.00.&lt;/p&gt;\n&lt;p&gt;This means the single pensioner would receive $36.00 per fortnight in rent assistance.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;*Note:&lt;/strong&gt; - Pensioners who pay rent and have dependent children will have their rent assistance paid by the Family Assistance Office as part of their Family Tax Benefit.&lt;/p&gt;\n&lt;h2&gt;What is the maximum amount of rent assistance I can receive?&lt;/h2&gt;\n&lt;p&gt;The maximum amount of rent assistance you can receive depends on whether you are single or a member of a couple.&lt;/p&gt;\n&lt;p&gt;The maximum fortnightly amounts of rent assistance are:&lt;/p&gt;\n&lt;p&gt;Singles rate - $132.20&lt;/p&gt;\n&lt;p&gt;Couples rate (combined) - $124.60&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;*Note:&lt;/strong&gt; - Each partner receives half the Couples (combined) rate.&lt;/p&gt;\n&lt;p&gt;The maximum amount of rent assistance is adjusted twice-yearly, in March and September, in line with movements in the cost of living.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;*Note:&lt;/strong&gt; - Most pensioners who pay rent and have dependent children will have their rent assistance paid by the Family Assistance Office as part of their Family Tax Benefit.&lt;/p&gt;\n&lt;h2&gt;How do I apply for rent assistance?&lt;/h2&gt;\n&lt;p&gt;To receive rent assistance, you need to contact DVA and tell us of your rental situation and the amount of rent you pay per fortnight. There are a number of ways you can give us information. You can:&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;phone us;&lt;/li&gt;\n&lt;li&gt;visit any of our offices; or&lt;/li&gt;\n&lt;li&gt;write to us.&lt;/li&gt;\n&lt;/ul&gt;&lt;p&gt;To confirm your rental amount you will need to give us a copy of your latest rent receipt or a copy of your lease.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;*Note:&lt;/strong&gt; - Rent assistance cannot be backdated. Payments can only be paid from the payday following notification that you are renting.&lt;/p&gt;\n&lt;h2&gt;Sharing accommodation&lt;/h2&gt;\n&lt;p&gt;If you are a single age pensioner, without children, who shares accommodation with others, the maximum amount of rent assistance that you can receive is set at two-thirds of the maximum single rate.&lt;/p&gt;\n&lt;p&gt;If you share a major area of accommodation such as a bathroom, kitchen or bedroom in common with at least one other person, the following maximum rate of rent assistance would apply:&lt;/p&gt;\n&lt;p&gt;Singles shared rent maximum rate - $88.13&lt;/p&gt;\n&lt;h2&gt;How do I apply for rent assistance?&lt;/h2&gt;\n&lt;p&gt;To apply for rent assistance, contact DVA and tell us of your rental situation and the amount of rent you pay per fortnight. There are a number of ways you can give us information. You can:&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;phone us;&lt;/li&gt;\n&lt;li&gt;visit any of our offices; or&lt;/li&gt;\n&lt;li&gt;write to us.&lt;/li&gt;\n&lt;/ul&gt;&lt;p&gt;To confirm your rental amount you will need to give us a copy of your latest rent receipt or a copy of your lease.&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;*Note:&lt;/strong&gt; - Rent assistance cannot be backdated. Payments can only be paid from the payday following notification that you are renting.&lt;/p&gt;\n&lt;h2&gt;Obligations&lt;/h2&gt;\n&lt;p&gt;When you were granted an age pension, and periodically after that, you will be notified of your obligations. You will be required to tell us within 14 days (28 days if you receive remote area allowance) of changes to your circumstances that might affect the rate of income support pension you receive or your eligibility to receive that pension. If you become aware that you have received, or are to receive a compensation payment, you will be required to tell us within 7 days. These obligations apply equally to trustees.&lt;/p&gt;\n&lt;p&gt;In relation to your rent assistance, the sorts of things you would need to tell us about within 14 days (28 days if you receive remote area allowance) are if:&lt;/p&gt;\n&lt;ul&gt;&lt;li&gt;the amount you pay in rent changes;&lt;/li&gt;\n&lt;li&gt;you stop paying rent;&lt;/li&gt;\n&lt;li&gt;you change your address;&lt;/li&gt;\n&lt;li&gt;you are single, and you commence to share the accommodation that you are renting&lt;/li&gt;\n&lt;li&gt;you start paying government rent, including paying rent to another person who pays government rent;&lt;/li&gt;\n&lt;li&gt;you move into a retirement village or other accommodation; or&lt;/li&gt;\n&lt;li&gt;you travel overseas.&lt;/li&gt;\n&lt;/ul&gt;&lt;p&gt;Usually an overpayment of pension will not occur when you have met your obligations. However, sometimes even if you have met your obligations, an overpayment can occur because we have not been able to process the change before the next payday. We do our best to avoid this occurring, but it is not always possible. To provide you with your exact entitlement we are obliged to recover overpayments of pension where they do occur.&lt;/p&gt;\n&lt;h2&gt;More Information&lt;/h2&gt;\n&lt;h3&gt;DVA General Enquiries&lt;/h3&gt;\n&lt;p&gt;Metro Phone: 133 254 *  &lt;/p&gt;\n&lt;p&gt;Regional Phone: 1800 555 254 *&lt;/p&gt;\n&lt;p&gt;&lt;a href=\"mailto:GeneralEnquiries@dva.gov.au\"&gt;&lt;font color=\"#0066cc\"&gt;Email&lt;/font&gt;&lt;/a&gt;: GeneralEnquiries@dva.gov.au&lt;/p&gt;\n&lt;p&gt;&lt;a href=\"http://www.dva.gov.au/\"&gt;&lt;font color=\"#0066cc\"&gt;DVA Website&lt;/font&gt;&lt;/a&gt;: www.dva.gov.au&lt;/p&gt;\n&lt;p&gt;&lt;a href=\"/about-dva/dva-factsheets\"&gt;&lt;font color=\"#0066cc\"&gt;Factsheet Website&lt;/font&gt;&lt;/a&gt;: www.dva.gov.au/factsheets&lt;/p&gt;\n&lt;p&gt;* Calls from mobile phones and pay phones may incur additional charges.&lt;/p&gt;\n&lt;h2&gt;Related Factsheets&lt;/h2&gt;\n&lt;ul&gt;&lt;li&gt;&lt;a href=\"/factsheet-is48-dependent-children-and-your-income-support-payments\"&gt;IS48 Dependent Children and your Income Support Payments&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\"/factsheet-is71-residential-circumstances\"&gt;IS71 Home Owners&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\"/factsheet-is73-granny-flats-retirement-villages-and-sale-leaseback-agreements\"&gt;IS73 Granny Flats, Retirement Villages and Sale Leaseback Agreements)&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\"/factsheet-is74-renting-and-rent-assistance\"&gt;IS74 Renting and Rent Assistance&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\"/factsheet-is77-travelling-or-living-overseas\"&gt;IS77 Travelling or Living Overseas&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\"/factsheet-is117-financial-hardship\"&gt;IS117 Financial Hardship&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\"/factsheet-is81-aged-care-and-your-income-support-pension\"&gt;IS81 Aged Care and Your Income Support Pension&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\"/factsheet-is147-blind-pensioners\"&gt;IS147 Blind Pensioners&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;&lt;h2&gt;Disclaimer&lt;/h2&gt;\n&lt;p&gt;&lt;span style=\"font-size: 11px;\"&gt;The information contained in this Factsheet is general in nature and does not take into account individual circumstances. You should not make important decisions, such as those that affect your financial or lifestyle position on the basis of information contained in this Factsheet. Where you are required to lodge a written claim for a benefit, you must take full responsibility for your decisions prior to the written claim being determined. You should seek confirmation in writing of any oral advice you receive from DVA.&lt;/span&gt;&lt;/p&gt;\n&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=\"field field-name-field-rate-this-page field-type-fivestar field-label-hidden\"&gt;&lt;div class=\"field-items\"&gt;&lt;div class=\"field-item even\"&gt;&lt;form class=\"fivestar-widget\" action=\"/factsheet-is75-renting-and-rent-assistance-social-security-age-pensioners\" method=\"post\" id=\"fivestar-custom-widget\" accept-charset=\"UTF-8\"&gt;&lt;div&gt;&lt;div class=\"clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default\"&gt;&lt;div class=\"form-item form-type-fivestar form-item-vote\"&gt;\n &lt;div class=\"form-item form-type-select form-item-vote\"&gt;\n &lt;label for=\"edit-vote--2\"&gt;Rate this page&lt;/label&gt;&lt;select id=\"edit-vote--2\" name=\"vote\" class=\"form-select\"&gt;&lt;option value=\"-\"&gt;Select rating&lt;option value=\"20\" selected=\"selected\"&gt;Give it 1/5&lt;option value=\"40\"&gt;Give it 2/5&lt;option value=\"60\"&gt;Give it 3/5&lt;option value=\"80\"&gt;Give it 4/5&lt;option value=\"100\"&gt;Give it 5/5&lt;/select&gt;\n&lt;div class=\"description\"&gt;&lt;div class=\"fivestar-summary fivestar-summary-average-count\"&gt;&lt;span class=\"average-rating\"&gt;Average: &lt;span&gt;1&lt;/span&gt;&lt;/span&gt; &lt;span class=\"total-votes\"&gt;(&lt;span&gt;1&lt;/span&gt; vote)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;&lt;input class=\"fivestar-submit form-submit\" type=\"submit\" id=\"edit-fivestar-submit\" name=\"op\" value=\"Rate\"&gt;&lt;input type=\"hidden\" name=\"form_build_id\" value=\"form-spz2uSCcHwYJK7KJzc3Nz8KvKoaeUSB8FzrU0z3HYms\"&gt;\n&lt;input type=\"hidden\" name=\"form_id\" value=\"fivestar_custom_widget\"&gt;\n&lt;/div&gt;&lt;/form&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=\"field field-name-field-last-updated-date field-type-datetime field-label-hidden\"&gt;&lt;div class=\"field-items\"&gt;&lt;div class=\"field-item even\"&gt;&lt;span class=\"date-display-single\"&gt;20 March 2017&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;\r\n  \r\n  \r\n&lt;/article&gt;\r\n  &lt;/div&gt;\n&lt;/div&gt;\n  &lt;/div&gt;"
+  }</value>
+  </data>
+</root>
