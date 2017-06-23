@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace FactSheetAnalyzer
@@ -37,8 +38,43 @@ namespace FactSheetAnalyzer
                 var innerText = asHtml.InnerText;
                 return innerText.Split(' ', '\n', '\r').Where(i => !String.IsNullOrEmpty(i)).Count();
             });
-
+                        
             Console.WriteLine("Word count: " + wordCount);
+
+            var factSheetHtmls = o.Select(i => new
+            {
+                Title = i["title"].Value<string>(),
+                BaldHtmlDoc =  createBaldFactSheetWebPage(i["factSheetHtml"].Value<string>())
+            });
+
+
+
+            Func<string,string> getFactsheetCode = (t => Regex.Match(t, @"[A-Z]+[0-9]+").Value);
+            var outputDir = Directory.CreateDirectory(Properties.Settings.Default.baldFactSheetsOutputDicr);
+             factSheetHtmls.ToList().ForEach(fs =>
+            {
+                var code = getFactsheetCode(fs.Title); 
+                var outputPath = Path.Combine(Properties.Settings.Default.baldFactSheetsOutputDicr,$"{code}.html");
+                fs.BaldHtmlDoc.Save(outputPath);
+            });
+
         }
+        
+        
+
+        private static HtmlDocument createBaldFactSheetWebPage(String factSheetDiv)
+        {
+            HtmlDocument output = new HtmlDocument();
+            output.LoadHtml($"<html>{factSheetDiv}</html>");
+            return output;
+        }
+        
+        
+
+
+
+
+
+       
     }
 }

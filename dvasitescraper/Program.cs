@@ -118,7 +118,6 @@ namespace DvaSiteScraper
                 return x.Title == y.Title;
             }
 
-
             public int GetHashCode(FactsheetItemFromIndexPage obj)
             {
                 return obj.GetHashCode(); 

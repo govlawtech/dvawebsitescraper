@@ -8,5 +8,8 @@
     <Setting Name="keywordsList" Type="System.String" Scope="User">
       <Value Profile="(Default)">keywordsList.txt</Value>
     </Setting>
+    <Setting Name="baldFactSheetsOutputDicr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">baldFactSheets</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
