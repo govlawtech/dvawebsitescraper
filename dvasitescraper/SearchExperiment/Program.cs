@@ -29,6 +29,7 @@ namespace SearchExperiment
 
             CreateIndex(serviceClient, indexName);
             ISearchIndexClient indexClient = serviceClient.Indexes.GetClient(indexName);
+            
 
             String jsonString = File.ReadAllText(configuration["FactSheetJsonPath"]);
             IEnumerable<FactSheet> factsheets = DeserializeFactsheets(jsonString);
@@ -66,7 +67,9 @@ namespace SearchExperiment
             var definition = new Index()
             {
                 Name = indexName,
-                Fields = FieldBuilder.BuildForType<FactSheet>()
+                Fields = FieldBuilder.BuildForType<FactSheet>(),
+                Analyzers = new [] {new Analyzer("en.microsoft")}
+                
             };
 
             serviceClient.Indexes.Create(definition);
