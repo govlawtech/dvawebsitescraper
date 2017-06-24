@@ -18,7 +18,6 @@ namespace SearchExperiment
         [Key]
         public string Key { get; set; }
 
-        [IsFilterable]
         public string FactsheetId { get; set; }
 
         [IsSearchable]
@@ -26,7 +25,6 @@ namespace SearchExperiment
 
         public DateTimeOffset? LastModified { get; set; }
 
-        [IsSearchable]
         public List<string> Questions { get; set; }
 
         public List<string> RelatedFactsheets { get; set; }
@@ -54,36 +52,56 @@ namespace SearchExperiment
                 Key = title.GetHashCode().ToString(),
                 FactsheetId = title,
                 CuratedKeyWords = keywords,
-                FullText = fullText
+                FullText = fullText,
+                Purpose = purpose
             };
         }
     
-        private static string StripEndingBoilerPlate(HtmlDocument htmlDocument)
+        private static void StripEndingBoilerPlate(HtmlDocument htmlDocument)
         {
-            throw new NotImplementedException();
+            // drop all following siblings of <h2>More Information</h2>
+            var moreInfoHeading = htmlDocument.DocumentNode.SelectNodes("//h2[text() = 'More Information']");
+            if (moreInfoHeading != null)
+            {
+                HtmlNode current = moreInfoHeading.First().NextSibling;
+                while (current != null)
+                {
+                    var toRemove = current;
+                    current = current.NextSibling;
+                    toRemove.Remove();
+                }
+                moreInfoHeading.First().Remove();
+            }
+
+            // drop rate this page thing
+            var ratingsDiv = htmlDocument.DocumentNode.SelectNodes("//div[contains(@class, 'field-name-field-rate-this-page')]");
+            if (ratingsDiv != null)
+                ratingsDiv.First().Remove();
         }
 
         private static string ExtractPurposeText(HtmlDocument htmlDocument)
         {
-            var purposeParas = htmlDocument.DocumentNode.SelectNodes("//h2[text() = 'Purpose'] ").FirstOrDefault();
-            if (purposeParas == null)
+            var purposeParasCollection = htmlDocument.DocumentNode.SelectNodes("//h2[text() = 'Purpose']");
+            if (purposeParasCollection == null)
                 return String.Empty;
 
             StringBuilder sb = new StringBuilder();
-            var contentPara = purposeParas.NextSibling;
+            var contentPara = purposeParasCollection.First().NextSibling;
             while (contentPara.Name != "h2")
             {
                 sb.Append(contentPara.InnerText);
                 contentPara = contentPara.NextSibling;
             }
 
-            return sb.ToString();
+            return sb.ToString().Trim();
         }
 
         private static string ExtractPlainTextFromHtmlFullText(string html)
         {
             HtmlDocument htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(html);
+            StripEndingBoilerPlate(htmlDocument);
+
             StringBuilder sb = new StringBuilder();
             foreach (HtmlNode node in htmlDocument.DocumentNode.SelectNodes("//text()"))
             {
@@ -93,8 +111,5 @@ namespace SearchExperiment
             }
             return sb.ToString();
         }
-
-        
     }
-
 }

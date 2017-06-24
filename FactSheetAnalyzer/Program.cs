@@ -48,7 +48,6 @@ namespace FactSheetAnalyzer
             });
 
 
-
             Func<string,string> getFactsheetCode = (t => Regex.Match(t, @"[A-Z]+[0-9]+").Value);
             var outputDir = Directory.CreateDirectory(Properties.Settings.Default.baldFactSheetsOutputDicr);
              factSheetHtmls.ToList().ForEach(fs =>
@@ -59,7 +58,6 @@ namespace FactSheetAnalyzer
             });
 
         }
-        
         
 
         private static HtmlDocument createBaldFactSheetWebPage(String factSheetDiv)
