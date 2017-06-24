@@ -67,9 +67,7 @@ namespace SearchExperiment
             var definition = new Index()
             {
                 Name = indexName,
-                Fields = FieldBuilder.BuildForType<FactSheet>(),
-                Analyzers = new [] {new Analyzer("en.microsoft")}
-                
+                Fields = FieldBuilder.BuildForType<FactSheet>()           
             };
 
             serviceClient.Indexes.Create(definition);

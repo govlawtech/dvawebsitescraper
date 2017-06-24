@@ -21,6 +21,7 @@ namespace SearchExperiment
         public string FactsheetId { get; set; }
 
         [IsSearchable]
+        [Analyzer(AnalyzerName.AsString.EnMicrosoft)]
         public string Purpose { get; set; }
 
         public DateTimeOffset? LastModified { get; set; }
@@ -34,6 +35,7 @@ namespace SearchExperiment
         public List<string> CuratedKeyWords { get; set; }
 
         [IsSearchable]
+        [Analyzer(AnalyzerName.AsString.EnMicrosoft)]
         public string FullText { get; set; }
 
         public static FactSheet fromJson(JObject factsheetNode)
