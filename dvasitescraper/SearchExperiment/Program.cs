@@ -8,6 +8,7 @@ using Microsoft.Spatial;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 
 namespace SearchExperiment
 {
@@ -27,14 +28,16 @@ namespace SearchExperiment
                 serviceClient.Indexes.Delete(indexName);
             }
 
+            
             CreateIndex(serviceClient, indexName);
             ISearchIndexClient indexClient = serviceClient.Indexes.GetClient(indexName);
-            
 
             String jsonString = File.ReadAllText(configuration["FactSheetJsonPath"]);
             IEnumerable<FactSheet> factsheets = DeserializeFactsheets(jsonString);
 
             UploadDocuments(indexClient, factsheets);
+
+
 
         }
 
@@ -64,10 +67,14 @@ namespace SearchExperiment
 
         private static void CreateIndex(SearchServiceClient serviceClient, string indexName)
         {
+            var scoringProfile = BuildScoringProfile();
+
             var definition = new Index()
             {
                 Name = indexName,
-                Fields = FieldBuilder.BuildForType<FactSheet>()           
+                Fields = FieldBuilder.BuildForType<FactSheet>(),
+                ScoringProfiles = new [] {scoringProfile},
+                DefaultScoringProfile = scoringProfile.Name
             };
 
             serviceClient.Indexes.Create(definition);
@@ -87,5 +94,20 @@ namespace SearchExperiment
             String.Join(", ", e.IndexingResults.Where(r => !r.Succeeded).Select(r => r.Key)));
             }
         }
+
+       private static ScoringProfile BuildScoringProfile()
+        {
+
+            var sp = new ScoringProfile("dvachatbotprofile1",
+                new TextWeights(new Dictionary<string, double>()
+                {
+                    {"purpose", 3D},
+                    {"curatedKeyWords",2D},
+                    {"factsheetId",5D}
+
+                }));
+            return sp;
+        }
+
     }
 }

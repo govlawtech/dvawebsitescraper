@@ -18,9 +18,12 @@ namespace SearchExperiment
         [Key]
         public string Key { get; set; }
 
+        [IsSearchable]
+        [IsFilterable]
         public string FactsheetId { get; set; }
 
         [IsSearchable]
+        [IsFilterable]
         [Analyzer(AnalyzerName.AsString.EnMicrosoft)]
         public string Purpose { get; set; }
 
@@ -35,6 +38,7 @@ namespace SearchExperiment
         public List<string> CuratedKeyWords { get; set; }
 
         [IsSearchable]
+        [IsFilterable]
         [Analyzer(AnalyzerName.AsString.EnMicrosoft)]
         public string FullText { get; set; }
 
