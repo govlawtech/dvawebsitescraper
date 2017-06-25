@@ -18,6 +18,8 @@ namespace SearchExperiment
         [Key]
         public string Key { get; set; }
 
+        public string Url { get; set; }
+
         [IsSearchable]
         [IsFilterable]
         public string FactsheetId { get; set; }
@@ -38,13 +40,13 @@ namespace SearchExperiment
         public List<string> CuratedKeyWords { get; set; }
 
         [IsSearchable]
-        [IsFilterable]
         [Analyzer(AnalyzerName.AsString.EnMicrosoft)]
         public string FullText { get; set; }
 
         public static FactSheet fromJson(JObject factsheetNode)
         {
             var title = factsheetNode["title"].Value<String>();
+            var url = factsheetNode["url"].Value<String>();
             JArray keywordsArray = factsheetNode["keywordsFromIndexPage"].Value<JArray>();
             List<string> keywords = keywordsArray.ToObject<List<string>>();
             string fulltexthtml = factsheetNode["factSheetHtml"].ToObject<string>();
@@ -59,7 +61,8 @@ namespace SearchExperiment
                 FactsheetId = title,
                 CuratedKeyWords = keywords,
                 FullText = fullText,
-                Purpose = purpose
+                Purpose = purpose,
+                Url = url
             };
         }
     

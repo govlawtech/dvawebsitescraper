@@ -77,7 +77,7 @@ namespace DvaSiteScraper
                 Console.WriteLine($"Retrived: {uri.ToString()}");
                 var contentNode = htmlDoc.DocumentNode.SelectSingleNode("//*[@id='content']/div/div[@class='region region-content']");
                 var contentNodeHtml = contentNode.OuterHtml;
-                return new ScrapedFactSheetData(factSheetName, keywords, contentNodeHtml);
+                return new ScrapedFactSheetData(factSheetName, keywords, contentNodeHtml,uri.ToString());
         }
 
         //http://stackoverflow.com/questions/281640/how-do-i-get-a-human-readable-file-size-in-bytes-abbreviation-using-net

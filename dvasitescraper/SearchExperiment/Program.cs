@@ -89,9 +89,13 @@ namespace SearchExperiment
             }
             catch (IndexBatchException e)
             {
-                Console.WriteLine(
-            "Failed to index some of the documents: {0}",
-            String.Join(", ", e.IndexingResults.Where(r => !r.Succeeded).Select(r => r.Key)));
+
+               var failed = e.IndexingResults.Where(r => !r.Succeeded);
+                Console.WriteLine("Failed: " + failed.Count());
+                foreach (var f in failed)
+                {
+                    Console.WriteLine("Failed: " + f.Key + ": " + f.ErrorMessage);
+                }
             }
         }
 
