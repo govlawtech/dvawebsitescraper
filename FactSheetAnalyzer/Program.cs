@@ -64,12 +64,18 @@ namespace FactSheetAnalyzer
 
         private static HtmlDocument createBaldFactSheetWebPage(String factSheetDiv)
         {
-            var factSheetDivWithMetadata = $"<!DOCTYPE html><html><head><meta charset=\"utf-8\"/></head>{factSheetDiv}</html>";
+            var withAbsoluteLinks = ReplaceRelativeLinksWithAbsolute(factSheetDiv);
+            var factSheetDivWithMetadata = $"<!DOCTYPE html><html><head><meta charset=\"utf-8\"/></head>{withAbsoluteLinks}</html>";
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(factSheetDivWithMetadata));
             HtmlDocument output = new HtmlDocument();
             output.Load(ms,Encoding.UTF8,false);
             StripEndingBoilerPlate(output); 
             return output;
+        }
+
+        private static string ReplaceRelativeLinksWithAbsolute(String factSheetDiv)
+        {
+            return Regex.Replace(factSheetDiv, @"<a href=""/", @"<a href=""https://www.dva.gov.au/");
         }
 
         private static void StripEndingBoilerPlate(HtmlDocument htmlDocument)
