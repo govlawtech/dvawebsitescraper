@@ -139,9 +139,9 @@ namespace QnALoader.Properties {
         ///HSV10
         /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string factSheetIdList {
+        internal static string factSheetCodes {
             get {
-                return ResourceManager.GetString("factSheetIdList", resourceCulture);
+                return ResourceManager.GetString("factSheetCodes", resourceCulture);
             }
         }
     }

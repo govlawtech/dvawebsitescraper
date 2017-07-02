@@ -11,9 +11,15 @@ namespace QnALoader.QnaMaker
     /// </summary>
     public class QnaMakerKb
     {
+        private readonly string _subscriptionKey;
         private readonly Uri qnaBaseUri = new Uri("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0");
 
-        private readonly string SubscriptionKey = ConfigurationManager.AppSettings["QnaSubscriptionKey"];
+        public QnaMakerKb(string subscriptionKey)
+        {
+            _subscriptionKey = subscriptionKey;
+        }
+
+        
 
         // Sample HTTP Request:
         // POST /knowledgebases/create
@@ -33,17 +39,9 @@ namespace QnALoader.QnaMaker
             using (var client = new WebClient())
             {
                 client.Headers.Add("Content-Type", "application/json");
-                client.Headers.Add("Ocp-Apim-Subscription-Key", this.SubscriptionKey);
+                client.Headers.Add("Ocp-Apim-Subscription-Key", this._subscriptionKey);
 
-                try
-                {
-                    responseString = client.UploadString(uri, postBody);
-
-                }
-                catch (WebException we)
-                {
-                    throw;
-                }
+                responseString = client.UploadString(uri, postBody);
             }
 
             var result = GetKBIdFromResponse(responseString);
