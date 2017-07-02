@@ -66,7 +66,7 @@ namespace SearchExperiment
             };
         }
     
-        private static void StripEndingBoilerPlate(HtmlDocument htmlDocument)
+        public static void StripEndingBoilerPlate(HtmlDocument htmlDocument)
         {
             // drop all following siblings of <h2>More Information</h2>
             var moreInfoHeading = htmlDocument.DocumentNode.SelectNodes("//h2[text() = 'More Information']");

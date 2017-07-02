@@ -26,6 +26,7 @@ namespace QnALoader
             Console.WriteLine("Completed creation of QnA knowledge bases");
         }
 
+
         private static List<string> GetMRCAFactsheetIDs()
         {
             List<string> result = new List<string>();

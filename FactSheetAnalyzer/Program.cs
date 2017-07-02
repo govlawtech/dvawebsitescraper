@@ -47,10 +47,12 @@ namespace FactSheetAnalyzer
                 BaldHtmlDoc =  createBaldFactSheetWebPage(i["factSheetHtml"].Value<string>())
             });
 
-
-            Func<string,string> getFactsheetCode = (t => Regex.Match(t, @"\s[A-Z]+([0-9]|-)+\s").Value);
-            var outputDir = Directory.CreateDirectory(Properties.Settings.Default.baldFactSheetsOutputDicr);
-             factSheetHtmls.ToList().ForEach(fs =>
+            Func<string,string> getFactsheetCode = (t =>
+            {
+                var code = t.Split(' ')[1];
+                return code;
+            });
+            factSheetHtmls.ToList().ForEach(fs =>
             {
                 var code = getFactsheetCode(fs.Title); 
                 var outputPath = Path.Combine(Properties.Settings.Default.baldFactSheetsOutputDicr,$"{code}.html");
@@ -63,16 +65,39 @@ namespace FactSheetAnalyzer
         private static HtmlDocument createBaldFactSheetWebPage(String factSheetDiv)
         {
             HtmlDocument output = new HtmlDocument();
-            output.LoadHtml($"<html>{factSheetDiv}</html>");
+            output.LoadHtml($"<!DOCTYPE html><html><head><meta charset=\"utf-8\"/></head>{factSheetDiv}</html>");
+            StripEndingBoilerPlate(output); 
             return output;
         }
-        
-        
+
+        private static void StripEndingBoilerPlate(HtmlDocument htmlDocument)
+        {
+            // drop all following siblings of <h2>More Information</h2>
+            var moreInfoHeading = htmlDocument.DocumentNode.SelectNodes("//h2[text() = 'More Information']");
+            if (moreInfoHeading != null)
+            {
+                HtmlNode current = moreInfoHeading.First().NextSibling;
+                while (current != null)
+                {
+                    var toRemove = current;
+                    current = current.NextSibling;
+                    toRemove.Remove();
+                }
+                moreInfoHeading.First().Remove();
+            }
+
+            // drop rate this page thing
+            var ratingsDiv = htmlDocument.DocumentNode.SelectNodes("//div[contains(@class, 'field-name-field-rate-this-page')]");
+            if (ratingsDiv != null)
+                ratingsDiv.First().Remove();
+        }
 
 
 
 
 
-       
+
+
+
     }
 }
