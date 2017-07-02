@@ -64,8 +64,10 @@ namespace FactSheetAnalyzer
 
         private static HtmlDocument createBaldFactSheetWebPage(String factSheetDiv)
         {
+            var factSheetDivWithMetadata = $"<!DOCTYPE html><html><head><meta charset=\"utf-8\"/></head>{factSheetDiv}</html>";
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(factSheetDivWithMetadata));
             HtmlDocument output = new HtmlDocument();
-            output.LoadHtml($"<!DOCTYPE html><html><head><meta charset=\"utf-8\"/></head>{factSheetDiv}</html>");
+            output.Load(ms,Encoding.UTF8,false);
             StripEndingBoilerPlate(output); 
             return output;
         }
