@@ -49,6 +49,7 @@ namespace QnALoader.QnaMaker
             return result.KBID;
         }
 
+
         // Convert Create service JSON response to object
         private QnaMakerCreateResult GetKBIdFromResponse(string responseString)
         {
