@@ -105,8 +105,8 @@ namespace SearchExperiment
             var sp = new ScoringProfile("dvachatbotprofile1",
                 new TextWeights(new Dictionary<string, double>()
                 {
-                    {"purpose", 3D},
-                    {"curatedKeyWords",2D},
+                    {"purpose", 2D},
+                    {"curatedKeyWords",3D},
                     {"factsheetId",5D}
 
                 }));

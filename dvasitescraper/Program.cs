@@ -69,7 +69,16 @@ namespace DvaSiteScraper
                 $"Seconds to scrape: {sw.Elapsed.TotalSeconds}\n" +
                 $"Number of fact sheets: {scrapedResults.Count}");
         }
-               
+
+        private static string ImproveFactSheeTitle(string title)
+        {
+            if (title == "Factsheet MRC04 - Compensation Payment Rates")
+                return "Factsheet MRC04 - Compensation Payment Rates (MRCA)";
+            if (title == "Factsheet MRC43 - Compensation Payment Rates")
+                return "Factsheet MRC43 - Compensation Payment Rates (SRCA and Defence Act)";
+
+            return title;
+        }
 
         private static async Task<ScrapedFactSheetData> getFactSheetData(string factSheetName, List<String> keywords, Uri uri)
         {
@@ -77,7 +86,7 @@ namespace DvaSiteScraper
                 Console.WriteLine($"Retrived: {uri.ToString()}");
                 var contentNode = htmlDoc.DocumentNode.SelectSingleNode("//*[@id='content']/div/div[@class='region region-content']");
                 var contentNodeHtml = contentNode.OuterHtml;
-                return new ScrapedFactSheetData(factSheetName, keywords, contentNodeHtml,uri.ToString());
+                return new ScrapedFactSheetData(ImproveFactSheeTitle(factSheetName), keywords, contentNodeHtml,uri.ToString());
         }
 
         //http://stackoverflow.com/questions/281640/how-do-i-get-a-human-readable-file-size-in-bytes-abbreviation-using-net
