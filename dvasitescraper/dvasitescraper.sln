@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DvaSiteScraper", "DvaSiteSc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactSheetAnalyzer", "..\FactSheetAnalyzer\FactSheetAnalyzer.csproj", "{51EEDB2B-2DC2-46F0-910F-50465D3B4324}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsaScraper", "..\EsaScraper\EsaScraper.csproj", "{D5C3D2B8-3399-4EF3-84A5-CDF46CE32EBD}"
-EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AppInsightsAnalyzer", "AppInsightsAnalyzer\AppInsightsAnalyzer.fsproj", "{2D6F8642-57F1-4B1E-ADAF-0C387D0695A1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchExperiment", "SearchExperiment\SearchExperiment.csproj", "{F64BE254-F3A1-48C4-8A06-F3B31E896E5F}"
@@ -31,10 +29,6 @@ Global
 		{51EEDB2B-2DC2-46F0-910F-50465D3B4324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51EEDB2B-2DC2-46F0-910F-50465D3B4324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51EEDB2B-2DC2-46F0-910F-50465D3B4324}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5C3D2B8-3399-4EF3-84A5-CDF46CE32EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5C3D2B8-3399-4EF3-84A5-CDF46CE32EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5C3D2B8-3399-4EF3-84A5-CDF46CE32EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5C3D2B8-3399-4EF3-84A5-CDF46CE32EBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D6F8642-57F1-4B1E-ADAF-0C387D0695A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D6F8642-57F1-4B1E-ADAF-0C387D0695A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D6F8642-57F1-4B1E-ADAF-0C387D0695A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,5 +48,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD3830E6-2028-48F4-901E-B6707C028029}
 	EndGlobalSection
 EndGlobal

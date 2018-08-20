@@ -26,7 +26,7 @@ namespace FactSheetAnalyzer
                                                      FsCount = fsCount
                                                  };
             var keywordCount = factSheetNumbersForEachKeyWord.Count();
-            var topKeyWords = factSheetNumbersForEachKeyWord.OrderByDescending(i => i.FsCount).Take(20);
+            var topKeyWords = factSheetNumbersForEachKeyWord.OrderByDescending(i => i.FsCount);
 
             topKeyWords.ToList().ForEach(kw => Console.WriteLine($"{kw.KeyWord} & {kw.FsCount} \\\\"));
 
@@ -52,6 +52,9 @@ namespace FactSheetAnalyzer
                 var code = t.Split(' ')[1];
                 return code;
             });
+
+            Directory.CreateDirectory(Properties.Settings.Default.baldFactSheetsOutputDicr);
+
             factSheetHtmls.ToList().ForEach(fs =>
             {
                 var code = getFactsheetCode(fs.Title); 

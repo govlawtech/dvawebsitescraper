@@ -85,7 +85,11 @@ namespace SearchExperiment
             var batch = IndexBatch.Upload(factsheets);
             try
             {
+                Console.WriteLine("Startin to index batch...");
                 indexClient.Documents.Index(batch);
+                Console.WriteLine("Done.");
+                Console.ReadKey();
+
             }
             catch (IndexBatchException e)
             {
@@ -96,6 +100,8 @@ namespace SearchExperiment
                 {
                     Console.WriteLine("Failed: " + f.Key + ": " + f.ErrorMessage);
                 }
+
+                Console.ReadKey();
             }
         }
 

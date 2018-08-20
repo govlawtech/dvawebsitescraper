@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="inputJson" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\Code\dvawebsitescraper\dvasitescraper\bin\Debug\allFactSheetData.json</Value>
+      <Value Profile="(Default)">C:\Users\nick\Documents\GitHub\dvawebsitescraper\dvasitescraper\SearchExperiment\allFactSheetData.json</Value>
     </Setting>
     <Setting Name="keywordsList" Type="System.String" Scope="User">
       <Value Profile="(Default)">keywordsList.txt</Value>
