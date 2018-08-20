@@ -36,6 +36,9 @@ namespace SearchExperiment
         public List<string> RelatedFactsheets { get; set; }
         
         [IsFilterable]
+        public double UniquePageViews { get; set; }
+
+        [IsFilterable]
         [IsSearchable]
         public List<string> CuratedKeyWords { get; set; }
 
@@ -64,6 +67,12 @@ namespace SearchExperiment
                 Purpose = purpose,
                 Url = url
             };
+        }
+
+        public FactSheet WithUniquePageViews(double pageViews)
+        {
+            this.UniquePageViews = pageViews;
+            return this;
         }
     
         public static void StripEndingBoilerPlate(HtmlDocument htmlDocument)

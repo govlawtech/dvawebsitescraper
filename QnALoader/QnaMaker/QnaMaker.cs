@@ -36,12 +36,19 @@ namespace QnALoader.QnaMaker
             var postBody = $"{{\"name\": \"{name}\",\"urls\": [\"{url}\"]}}";
 
             //Send the POST request
-            using (var client = new WebClient())
+            try
             {
-                client.Headers.Add("Content-Type", "application/json");
-                client.Headers.Add("Ocp-Apim-Subscription-Key", this._subscriptionKey);
+                using (var client = new WebClient())
+                {
+                    client.Headers.Add("Content-Type", "application/json");
+                    client.Headers.Add("Ocp-Apim-Subscription-Key", this._subscriptionKey);
 
-                responseString = client.UploadString(uri, postBody);
+                    responseString = client.UploadString(uri, postBody);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
 
             var result = GetKBIdFromResponse(responseString);
@@ -49,7 +56,21 @@ namespace QnALoader.QnaMaker
             return result.KBID;
         }
 
+        public string DeleteKnowledgeBase(string name)
+        {
+            var responseString = string.Empty;
 
+            var uri = new UriBuilder($"{qnaBaseUri}/knowledgebases/{name}").Uri;
+
+            using (var client = new WebClient())
+            {
+                client.Headers.Add("Content-Type", "application/json");
+                client.Headers.Add("Ocp-Apim-Subscription-Key", this._subscriptionKey);
+                var result = client.UploadString(uri, "DELETE",String.Empty);
+                return result;
+            }
+            
+        }
         // Convert Create service JSON response to object
         private QnaMakerCreateResult GetKBIdFromResponse(string responseString)
         {
