@@ -30,6 +30,7 @@ namespace QnALoader
             /**
              * QnA Maker is provided under Cognitive Services Terms. This free preview provides up to 10 transactions per minute, up to 10,000 transactions per month.
              */
+            List<string> failed = new List<string>();
 
             using (var fs = File.Create(outputFile))
             {
@@ -37,33 +38,32 @@ namespace QnALoader
                 {
                     foreach (var factsheetId in allFactsheets)
                     {
-
                         try
                         {
+                 
+                            Thread.Sleep(11000);
                             var kbId = qnaMaker.CreateKnowledgeBase(factsheetId,
                                 $"https://dvachatbotstorage.blob.core.windows.net/factsheets/{factsheetId}.html");
                             os.WriteLine($"\"{factsheetId}\",\"{kbId}\"");
                             Console.WriteLine($"Successfully created KB {factsheetId} with ID {kbId}");
-                            Thread.Sleep(7000);
                         }
                         catch (Exception e)
                         {
+                            Console.WriteLine($"Failed to create KB for {factsheetId}");
                             Console.WriteLine(e);
+                            failed.Add(factsheetId);
                         }
                     }
 
 
                     Console.WriteLine("Completed creation of QnA knowledge bases");
-
-
+                    
                 }
-
-
-
             }
 
-
-
+            File.WriteAllLines("failed.txt", failed);
         }
+
+
     }
 }
