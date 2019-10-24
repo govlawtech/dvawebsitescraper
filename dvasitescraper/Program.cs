@@ -14,7 +14,6 @@ namespace DvaSiteScraper
     {
         static void Main(string[] args)
         {
-
             Stopwatch sw = new Stopwatch();
             sw.Start();
             HtmlDocument factSheetByKeywordIndexPage = Scraper.FetchHtmlDocument(new Uri(Properties.Settings.Default.factListByKeyWordPageUrl));

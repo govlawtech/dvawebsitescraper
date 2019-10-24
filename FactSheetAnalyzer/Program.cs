@@ -17,6 +17,10 @@ namespace FactSheetAnalyzer
             String json = File.ReadAllText(Properties.Settings.Default.inputJson,Encoding.UTF8);
             JArray o = JArray.Parse(json);
             var keywords = o.SelectMany(fs => fs["keywordsFromIndexPage"]).Select(i => i.Value<String>()).Distinct().OrderBy(i => i);
+
+            var numSheets = o.Count();
+            Console.WriteLine("Number of sheets: " + numSheets);
+
             Console.WriteLine("Number of key words: " + keywords.Count());
             var factSheetNumbersForEachKeyWord = from kw in keywords
                                                  let fsCount = o.Where(i => i["keywordsFromIndexPage"].Select(n => n.Value<String>()).Contains(kw)).Count()
@@ -102,13 +106,5 @@ namespace FactSheetAnalyzer
             if (ratingsDiv != null)
                 ratingsDiv.First().Remove();
         }
-
-
-
-
-
-
-
-
     }
 }
